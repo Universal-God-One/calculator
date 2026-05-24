@@ -1,0 +1,91 @@
+.page { padding: 2rem 0 4rem; }
+.wrap { display: flex; flex-direction: column; gap: 2rem; }
+
+.hero { text-align: center; padding: 2rem 0 0.5rem; }
+.crumb { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #f1f5f9 40%, var(--accent-glow));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 0.6rem;
+}
+.sub { color: var(--text-secondary); font-size: 1rem; max-width: 480px; margin: 0 auto; }
+
+.mainGrid { display: grid; grid-template-columns: 360px 1fr; gap: 1.5rem; align-items: start; }
+
+.inputCard, .divisionCard, .stepsCard {
+  background: var(--bg-surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 1.75rem;
+}
+.cardTitle { font-size: 0.95rem; font-weight: 600; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+
+.inputRow { display: flex; align-items: flex-end; gap: 0.75rem; margin-bottom: 1rem; }
+.field { display: flex; flex-direction: column; gap: 0.4rem; flex: 1; margin-bottom: 1rem; }
+.label { font-size: 0.72rem; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; }
+.divSymbol { font-size: 1.75rem; font-weight: 700; color: var(--text-muted); padding-bottom: 0.4rem; }
+.errNote { font-size: 0.72rem; color: var(--accent-red); }
+
+.input { width: 100%; padding: 0.65rem 0.875rem; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--text-primary); font-size: 1.1rem; font-family: var(--font-mono); font-weight: 600; transition: border-color 0.2s; }
+.input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(59,130,246,0.12); }
+
+.examples { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem; }
+.exLabel { font-size: 0.72rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; }
+.exBtns { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.exBtn { padding: 0.3rem 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-elevated); color: var(--text-muted); font-size: 0.78rem; font-family: var(--font-mono); cursor: pointer; transition: all 0.15s; }
+.exBtn:hover { border-color: var(--accent); color: var(--text-primary); }
+
+.summary { margin-top: 1.25rem; background: var(--bg-elevated); border-radius: var(--radius-md); padding: 1rem; display: flex; flex-direction: column; gap: 0.4rem; border-top: 1px solid var(--border); }
+.summaryRow { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: var(--text-secondary); }
+.summaryVal { font-family: var(--font-mono); font-weight: 700; color: var(--accent-green); font-size: 1rem; }
+.summaryVerify { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); }
+
+/* Long division visual */
+.longDivBox { background: var(--bg-elevated); border-radius: var(--radius-md); padding: 2rem; min-height: 140px; display: flex; align-items: center; justify-content: center; }
+.ldLayout { display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+.ldTop { display: flex; align-items: stretch; gap: 0; }
+.ldDivisor { font-family: var(--font-mono); font-size: 2rem; font-weight: 800; color: var(--text-primary); padding-right: 0.5rem; border-right: 3px solid var(--text-primary); display: flex; align-items: center; }
+.ldRight { display: flex; flex-direction: column; padding-left: 0.5rem; border-top: 3px solid var(--text-primary); }
+.ldQuotient { font-family: var(--font-mono); font-size: 1.5rem; font-weight: 800; color: var(--accent-green); padding: 0.25rem 0.5rem; }
+.ldBar { height: 2px; background: var(--border); margin: 0.25rem 0; }
+.ldDividend { font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--text-primary); padding: 0.25rem 0.5rem; }
+.ldRem { font-family: var(--font-mono); font-size: 0.875rem; color: var(--accent-amber); font-weight: 600; }
+.ldNote { font-size: 0.72rem; color: var(--text-muted); }
+
+/* Steps */
+.stepsHeader { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
+.stepsHeader .cardTitle { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
+.toggleBtn { padding: 0.35rem 0.875rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-elevated); color: var(--text-muted); font-size: 0.78rem; cursor: pointer; font-family: var(--font-sans); transition: all 0.15s; }
+.toggleBtn:hover { border-color: var(--accent); color: var(--text-primary); }
+
+.stepsGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+.stepBlock { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem 1.25rem; }
+.stepDecimal { border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.04); }
+.stepNum { font-size: 0.72rem; font-weight: 700; color: var(--accent-glow); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem; }
+.decTag { font-size: 0.62rem; padding: 0.1rem 0.4rem; border-radius: 999px; background: rgba(245,158,11,0.12); color: var(--accent-amber); border: 1px solid rgba(245,158,11,0.25); }
+
+.stepLines { display: flex; flex-direction: column; gap: 0.35rem; }
+.stepLine { display: flex; align-items: baseline; gap: 0.5rem; font-size: 0.82rem; }
+.stepIcon { font-size: 1rem; color: var(--accent-glow); width: 16px; text-align: center; flex-shrink: 0; }
+.stepLabel { font-weight: 600; color: var(--text-secondary); font-size: 0.75rem; min-width: 68px; }
+.stepDesc { font-family: var(--font-mono); color: var(--text-primary); font-size: 0.82rem; }
+.doneNote { font-size: 0.75rem; color: var(--accent-green); margin-top: 0.25rem; }
+
+.article { max-width: 760px; margin: 0 auto; color: var(--text-secondary); line-height: 1.8; }
+.article h2 { font-size: clamp(1.1rem, 2.5vw, 1.3rem); font-weight: 700; color: var(--text-primary); margin: 2.5rem 0 0.75rem; }
+.article p { margin-bottom: 1rem; font-size: clamp(0.875rem, 2vw, 1rem); }
+.article strong { color: var(--text-primary); }
+
+.faqs { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.75rem; }
+.faq { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md); }
+.faqQ { padding: 1rem 1.25rem; font-weight: 500; color: var(--text-primary); cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 1rem; font-size: 0.9rem; }
+.faqQ::after { content: '▾'; color: var(--text-muted); transition: transform 0.2s; flex-shrink: 0; }
+details[open] .faqQ::after { transform: rotate(180deg); }
+.faqA { padding: 0.75rem 1.25rem 1rem; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; border-top: 1px solid var(--border); margin: 0; }
+
+@media (max-width: 760px) { .mainGrid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) {
+  .h1 { font-size: 1.6rem; }
+  .inputCard, .divisionCard, .stepsCard { padding: 1.25rem; }
+  .stepsGrid { grid-template-columns: 1fr; }
+  .ldDivisor, .ldQuotient, .ldDividend { font-size: 1.25rem; }
+}

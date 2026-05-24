@@ -1,0 +1,111 @@
+.page { padding: 2rem 0 4rem; }
+.wrap { display: flex; flex-direction: column; gap: 2rem; }
+
+.hero { text-align: center; padding: 2rem 0 0.5rem; }
+.crumb { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #f1f5f9 40%, var(--accent-glow));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 0.6rem;
+}
+.sub { color: var(--text-secondary); font-size: 1rem; max-width: 520px; margin: 0 auto 0.75rem; }
+.formulaBadge {
+  display: inline-block; font-family: var(--font-mono); font-size: 1rem; font-weight: 600;
+  color: var(--accent-glow); background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.2);
+  border-radius: var(--radius-md); padding: 0.4rem 1.25rem;
+}
+
+.tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.tab { padding: 0.5rem 1.1rem; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--bg-surface); color: var(--text-muted); font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: all 0.2s; font-family: var(--font-sans); }
+.tab:hover { border-color: var(--accent); color: var(--text-primary); }
+.tabActive { border-color: var(--accent); background: rgba(59,130,246,0.08); color: var(--text-primary); }
+
+/* Main grid */
+.mainGrid { display: flex; flex-direction: column; gap: 1.5rem; }
+.inputCard, .resultsCard, .chartCard, .card {
+  background: var(--bg-surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 1.75rem;
+}
+.cardTitle { font-size: 0.95rem; font-weight: 600; margin-bottom: 1rem; }
+.cardDesc { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.25rem; }
+
+.inputSection { margin-bottom: 1rem; }
+.inputSubtitle { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.6rem; }
+
+.fieldRow { display: flex; gap: 1rem; flex-wrap: wrap; }
+.field { display: flex; flex-direction: column; gap: 0.35rem; min-width: 100px; flex: 1; }
+.fieldLabel { font-size: 0.7rem; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; }
+.input { width: 100%; padding: 0.65rem 0.875rem; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--text-primary); font-size: 1rem; font-family: var(--font-mono); font-weight: 600; transition: border-color 0.2s; }
+.input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(59,130,246,0.12); }
+
+.divider { display: flex; align-items: center; gap: 1rem; margin: 1rem 0; color: var(--text-muted); font-size: 0.75rem; }
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* Z big display */
+.zBig { text-align: center; padding: 1.25rem 0; border-bottom: 1px solid var(--border); margin-bottom: 1.25rem; }
+.zBigLabel { display: block; font-size: 0.72rem; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
+.zBigValue { display: block; font-family: var(--font-mono); font-size: 2.5rem; font-weight: 800; color: var(--accent-green); }
+.zBigNote { font-size: 0.78rem; color: var(--text-muted); }
+
+/* Prob cards */
+.probGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.probCard { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 0.875rem 1rem; }
+.probLabel { display: block; font-size: 0.68rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; }
+.probSub { display: block; font-size: 0.65rem; color: var(--text-muted); margin-bottom: 0.3rem; }
+.probValue { display: block; font-family: var(--font-mono); font-size: 1.1rem; font-weight: 700; color: var(--accent-glow); }
+.probNum { display: block; font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); }
+
+.chartTitle { font-size: 0.95rem; font-weight: 600; margin-bottom: 1rem; }
+
+/* Inverse */
+.invResult { display: flex; flex-direction: column; gap: 0.5rem; background: var(--bg-elevated); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 1.5rem; }
+.invRow { display: flex; justify-content: space-between; font-size: 0.875rem; }
+.invLabel { color: var(--text-secondary); }
+.invValue { font-family: var(--font-mono); font-weight: 700; color: var(--accent-green); }
+
+.criticalValues { margin-top: 1rem; }
+.cvTitle { font-size: 0.78rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.75rem; }
+.cvGrid { display: flex; flex-direction: column; gap: 0.4rem; }
+.cvRow { display: grid; grid-template-columns: 90px 1fr 1fr; gap: 0.5rem; align-items: center; padding: 0.4rem 0.75rem; background: var(--bg-elevated); border-radius: var(--radius-sm); font-size: 0.8rem; }
+.cvConf { font-weight: 600; color: var(--text-primary); }
+.cvZ { font-family: var(--font-mono); color: var(--text-secondary); }
+
+/* Z-table */
+.tableHeader { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem; }
+.signToggle { display: flex; gap: 0.35rem; }
+.signBtn { padding: 0.35rem 0.875rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-elevated); color: var(--text-muted); font-size: 0.78rem; cursor: pointer; font-family: var(--font-sans); transition: all 0.15s; }
+.signBtn:hover { border-color: var(--accent); color: var(--text-primary); }
+.signActive { border-color: var(--accent); background: rgba(59,130,246,0.1); color: var(--text-primary); }
+
+.tableWrap { overflow-x: auto; max-height: 480px; overflow-y: auto; }
+.zTable { border-collapse: collapse; font-family: var(--font-mono); font-size: 0.72rem; white-space: nowrap; }
+.zTable th { padding: 0.4rem 0.5rem; background: var(--bg-elevated); color: var(--text-muted); font-weight: 500; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1; text-align: center; }
+.zRowLabel { padding: 0.3rem 0.6rem; background: var(--bg-elevated); color: var(--accent-glow); font-weight: 600; border-right: 1px solid var(--border); position: sticky; left: 0; z-index: 1; }
+.zCell { padding: 0.3rem 0.5rem; text-align: center; color: var(--text-secondary); border-bottom: 1px solid rgba(255,255,255,0.03); cursor: pointer; transition: background 0.1s; }
+.zCell:hover { background: rgba(59,130,246,0.1); color: var(--text-primary); }
+.zCellHl { background: rgba(16,185,129,0.15) !important; color: var(--accent-green) !important; font-weight: 700; }
+.tableNote { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.75rem; text-align: center; }
+
+/* Article */
+.article { max-width: 760px; margin: 0 auto; color: var(--text-secondary); line-height: 1.8; }
+.article h2 { font-size: clamp(1.1rem, 2.5vw, 1.3rem); font-weight: 700; color: var(--text-primary); margin: 2.5rem 0 0.75rem; }
+
+.faqs { display: flex; flex-direction: column; gap: 0.6rem; }
+.faq { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md); }
+.faqQ { padding: 1rem 1.25rem; font-weight: 500; color: var(--text-primary); cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 1rem; font-size: 0.9rem; }
+.faqQ::after { content: '▾'; color: var(--text-muted); transition: transform 0.2s; flex-shrink: 0; }
+details[open] .faqQ::after { transform: rotate(180deg); }
+.faqA { padding: 0.75rem 1.25rem 1rem; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; border-top: 1px solid var(--border); margin: 0; }
+
+@media (max-width: 600px) {
+  .probGrid { grid-template-columns: 1fr; }
+  .fieldRow { flex-direction: column; }
+  .cvRow { grid-template-columns: 70px 1fr; }
+  .cvRow span:last-child { display: none; }
+}
+@media (max-width: 480px) {
+  .h1 { font-size: 1.6rem; }
+  .inputCard, .resultsCard, .chartCard, .card { padding: 1.25rem; }
+  .zBigValue { font-size: 2rem; }
+}

@@ -1,0 +1,119 @@
+.page { padding: 2rem 0 4rem; }
+.wrap { display: flex; flex-direction: column; gap: 2rem; }
+
+.hero { text-align: center; padding: 2rem 0 0.5rem; }
+.crumb { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #f1f5f9 40%, var(--accent-glow));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 0.6rem;
+}
+.sub { color: var(--text-secondary); font-size: 1rem; max-width: 500px; margin: 0 auto 0.75rem; }
+.formulaBadge { display: inline-block; font-family: var(--font-mono); font-size: 0.82rem; font-weight: 600; color: var(--accent-glow); background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.2); border-radius: var(--radius-md); padding: 0.4rem 1.25rem; }
+
+.mainGrid { display: grid; grid-template-columns: 380px 1fr; gap: 1.5rem; align-items: start; }
+
+.inputCard, .resultsCard, .thresholdsCard {
+  background: var(--bg-surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 1.75rem;
+}
+.cardTitle { font-size: 0.95rem; font-weight: 600; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+
+.field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+.label { font-size: 0.72rem; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.06em; }
+.hint { font-size: 0.7rem; color: var(--accent-green); font-family: var(--font-mono); }
+.input, .select {
+  width: 100%; padding: 0.65rem 0.875rem; background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: var(--radius-md); color: var(--text-primary); font-size: 0.9rem; font-family: var(--font-mono);
+  transition: border-color 0.2s; appearance: none; -webkit-appearance: none;
+}
+.input:focus, .select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(59,130,246,0.12); }
+.select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 0.875rem center; padding-right: 2.5rem; cursor: pointer;
+}
+
+/* Debt section */
+.debtSection { background: var(--bg-elevated); border-radius: var(--radius-md); padding: 1rem; }
+.debtTitle { font-size: 0.72rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.75rem; }
+.debtRow { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.debtLabel { font-size: 0.82rem; color: var(--text-secondary); flex: 1; }
+.debtInputWrap { display: flex; align-items: center; gap: 0.25rem; }
+.debtSym { font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono); }
+.debtInput { width: 90px; padding: 0.3rem 0.5rem; background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-primary); font-family: var(--font-mono); font-size: 0.85rem; text-align: right; }
+.debtInput:focus { outline: none; border-color: var(--accent); }
+.removeBtn { width: 22px; height: 22px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-elevated); color: var(--text-muted); cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; transition: all 0.15s; padding: 0; }
+.removeBtn:hover { border-color: var(--accent-red); color: var(--accent-red); }
+
+.addDebtRow { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border); }
+.addLabelInput { flex: 1; padding: 0.35rem 0.5rem; background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-primary); font-size: 0.82rem; }
+.addLabelInput:focus { outline: none; border-color: var(--accent); }
+.addBtn { padding: 0.35rem 0.75rem; border: 1px solid rgba(16,185,129,0.4); border-radius: var(--radius-sm); background: rgba(16,185,129,0.08); color: var(--accent-green); font-size: 1rem; cursor: pointer; font-weight: 700; transition: all 0.15s; }
+.addBtn:hover { background: rgba(16,185,129,0.15); }
+
+/* Results */
+.dtiDisplay { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+.dtiMain { display: flex; flex-direction: column; gap: 0.2rem; }
+.dtiLabel { font-size: 0.68rem; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.dtiValue { font-family: var(--font-mono); font-size: 2.8rem; font-weight: 900; line-height: 1; }
+.dtiRating { font-size: 0.85rem; font-weight: 700; }
+.dtiFront { display: flex; flex-direction: column; gap: 0.15rem; border-left: 1px solid var(--border); padding-left: 1.5rem; }
+.dtiSmLabel { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; }
+.dtiSmValue { font-family: var(--font-mono); font-size: 1.4rem; font-weight: 700; color: var(--text-primary); }
+.dtiSmNote { font-size: 0.65rem; color: var(--text-muted); }
+
+/* DTI bar */
+.dtiBar { position: relative; height: 12px; background: rgba(255,255,255,0.06); border-radius: 6px; overflow: visible; margin-bottom: 1.75rem; }
+.dtiBarFill { height: 100%; border-radius: 6px; transition: width 0.4s, background 0.4s; max-width: 100%; }
+.dtiBarMarks { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+.dtiMark { position: absolute; top: -4px; bottom: -4px; }
+.dtiMarkLine { width: 2px; height: 20px; background: var(--border); border-radius: 1px; }
+.dtiMarkLabel { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); font-size: 0.6rem; color: var(--text-muted); font-family: var(--font-mono); white-space: nowrap; }
+
+.statGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 1.25rem; }
+.stat { background: var(--bg-elevated); border-radius: var(--radius-md); padding: 0.75rem 1rem; }
+.statLabel { display: block; font-size: 0.65rem; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.2rem; }
+.statValue { font-family: var(--font-mono); font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+
+/* Breakdown */
+.breakdown { border-top: 1px solid var(--border); padding-top: 1rem; }
+.breakdownTitle { font-size: 0.72rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.75rem; }
+.breakRow { display: grid; grid-template-columns: 1fr 80px auto auto; gap: 0.5rem; align-items: center; padding: 0.3rem 0; font-size: 0.8rem; }
+.breakLabel { color: var(--text-secondary); }
+.breakBarWrap { height: 6px; background: var(--bg-elevated); border-radius: 3px; overflow: hidden; }
+.breakBar { height: 100%; background: var(--accent); border-radius: 3px; transition: width 0.3s; }
+.breakPct { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); text-align: right; }
+.breakAmt { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-primary); font-weight: 600; text-align: right; min-width: 70px; }
+
+.empty { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; min-height: 220px; text-align: center; color: var(--text-muted); padding: 2rem; }
+.emptyIcon { font-size: 2rem; }
+
+/* Thresholds */
+.thresholdsTitle { font-size: 0.95rem; font-weight: 600; margin-bottom: 1.25rem; }
+.thresholdsGrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.6rem; }
+.threshold { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 0.875rem 1rem; display: flex; flex-direction: column; gap: 0.25rem; }
+.thresholdActive { border-color: var(--accent); background: rgba(59,130,246,0.06); }
+.thresholdRange { font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700; color: var(--text-primary); }
+.thresholdRating { font-size: 0.72rem; font-weight: 600; color: var(--accent-glow); }
+.thresholdDesc { font-size: 0.68rem; color: var(--text-muted); line-height: 1.4; }
+
+.article { max-width: 760px; margin: 0 auto; color: var(--text-secondary); line-height: 1.8; }
+.article h2 { font-size: clamp(1.1rem, 2.5vw, 1.3rem); font-weight: 700; color: var(--text-primary); margin: 2.5rem 0 0.75rem; }
+
+.faqs { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.75rem; }
+.faq { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md); }
+.faqQ { padding: 1rem 1.25rem; font-weight: 500; color: var(--text-primary); cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 1rem; font-size: 0.9rem; }
+.faqQ::after { content: '▾'; color: var(--text-muted); transition: transform 0.2s; flex-shrink: 0; }
+details[open] .faqQ::after { transform: rotate(180deg); }
+.faqA { padding: 0.75rem 1.25rem 1rem; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; border-top: 1px solid var(--border); margin: 0; }
+
+@media (max-width: 900px) { .mainGrid { grid-template-columns: 1fr; } .thresholdsGrid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .thresholdsGrid { grid-template-columns: 1fr; } .statGrid { grid-template-columns: 1fr; } .breakRow { grid-template-columns: 1fr auto auto; } .breakBarWrap { display: none; } }
+@media (max-width: 480px) {
+  .h1 { font-size: 1.6rem; }
+  .inputCard, .resultsCard, .thresholdsCard { padding: 1.25rem; }
+  .dtiValue { font-size: 2.2rem; }
+  .dtiDisplay { flex-direction: column; gap: 0.75rem; }
+  .dtiFront { border-left: none; padding-left: 0; border-top: 1px solid var(--border); padding-top: 0.75rem; }
+}

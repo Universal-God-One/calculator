@@ -1,0 +1,105 @@
+.page { padding: 2rem 0 4rem; }
+.wrap { display: flex; flex-direction: column; gap: 2rem; }
+
+.hero { text-align: center; padding: 2rem 0 0.5rem; }
+.crumb { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #f1f5f9 40%, var(--accent-glow));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 0.6rem;
+}
+.sub { color: var(--text-secondary); font-size: 1rem; max-width: 480px; margin: 0 auto; }
+
+.mainGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+
+.inputCard, .resultsCard, .chartCard, .boxPlotCard {
+  background: var(--bg-surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 1.75rem;
+}
+.cardTitle { font-size: 0.95rem; font-weight: 600; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+
+.dataInput {
+  width: 100%; padding: 0.75rem; background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: var(--radius-md); color: var(--text-primary); font-family: var(--font-mono);
+  font-size: 0.875rem; resize: vertical; line-height: 1.6;
+  transition: border-color 0.2s;
+}
+.dataInput:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(59,130,246,0.12); }
+
+.sampleRow { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin-top: 0.75rem; }
+.sampleLabel { font-size: 0.72rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; }
+.sampleBtn { padding: 0.25rem 0.65rem; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-muted); font-size: 0.72rem; cursor: pointer; font-family: var(--font-sans); transition: all 0.15s; }
+.sampleBtn:hover { border-color: var(--accent); color: var(--text-primary); }
+
+.errorMsg { margin-top: 0.75rem; font-size: 0.82rem; color: var(--accent-red); }
+.inputMeta { display: flex; gap: 1rem; margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono); flex-wrap: wrap; }
+
+/* Highlights */
+.highlight { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+.highlightItem { background: var(--bg-elevated); border-radius: var(--radius-md); padding: 0.875rem 1rem; }
+.hlLabel { display: block; font-size: 0.68rem; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.3rem; }
+.hlValue { font-family: var(--font-mono); font-size: 1.5rem; font-weight: 800; color: var(--accent-green); }
+
+/* Stat grid */
+.statGrid { display: flex; flex-direction: column; gap: 0; margin-bottom: 1rem; }
+.statRow { display: flex; justify-content: space-between; align-items: center; padding: 0.35rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.82rem; }
+.statLabel { color: var(--text-secondary); }
+.statValue { font-family: var(--font-mono); font-weight: 600; color: var(--text-primary); }
+
+/* Formulas */
+.formulaToggle { padding: 0.4rem 0.875rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-elevated); color: var(--text-muted); font-size: 0.78rem; cursor: pointer; font-family: var(--font-sans); transition: all 0.15s; }
+.formulaToggle:hover { border-color: var(--accent); color: var(--text-primary); }
+.formulas { margin-top: 0.75rem; background: var(--bg-elevated); border-radius: var(--radius-md); padding: 0.875rem 1rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.formula { display: flex; gap: 0.75rem; align-items: baseline; font-size: 0.8rem; }
+.fLabel { color: var(--text-muted); font-weight: 500; min-width: 130px; }
+.formula code { font-family: var(--font-mono); color: var(--accent-glow); font-size: 0.82rem; }
+
+.chartTitle { font-size: 0.95rem; font-weight: 600; margin-bottom: 1.25rem; }
+
+/* Box plot */
+.boxPlot { padding: 1.5rem 1rem 2.5rem; position: relative; }
+.bpTrack { position: relative; height: 36px; }
+.bpWhiskerLeft, .bpWhiskerRight {
+  position: absolute; top: 50%; height: 2px;
+  background: var(--text-muted); transform: translateY(-50%);
+}
+.bpBox {
+  position: absolute; top: 4px; bottom: 4px;
+  background: rgba(59,130,246,0.2); border: 2px solid var(--accent);
+  border-radius: 2px;
+}
+.bpMedian {
+  position: absolute; top: -4px; bottom: -4px; width: 3px;
+  background: var(--accent-green); left: 50%;
+}
+.bpMean {
+  position: absolute; top: 50%; width: 10px; height: 10px;
+  background: var(--accent-amber); border-radius: 50%;
+  transform: translate(-50%, -50%); z-index: 2;
+  border: 2px solid var(--bg-surface);
+}
+.bpLabels {
+  position: absolute; bottom: 0; left: 1rem; right: 1rem;
+  display: flex; font-size: 0.68rem; font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+.bpLabels span { position: absolute; transform: translateX(-50%); }
+
+.article { max-width: 760px; margin: 0 auto; color: var(--text-secondary); line-height: 1.8; }
+.article h2 { font-size: clamp(1.1rem, 2.5vw, 1.3rem); font-weight: 700; color: var(--text-primary); margin: 2.5rem 0 0.75rem; }
+
+.faqs { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.75rem; }
+.faq { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md); }
+.faqQ { padding: 1rem 1.25rem; font-weight: 500; color: var(--text-primary); cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 1rem; font-size: 0.9rem; }
+.faqQ::after { content: '▾'; color: var(--text-muted); transition: transform 0.2s; flex-shrink: 0; }
+details[open] .faqQ::after { transform: rotate(180deg); }
+.faqA { padding: 0.75rem 1.25rem 1rem; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; border-top: 1px solid var(--border); margin: 0; }
+
+@media (max-width: 700px) { .mainGrid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) {
+  .h1 { font-size: 1.6rem; }
+  .inputCard, .resultsCard, .chartCard, .boxPlotCard { padding: 1.25rem; }
+  .highlight { grid-template-columns: 1fr; }
+  .hlValue { font-size: 1.25rem; }
+}

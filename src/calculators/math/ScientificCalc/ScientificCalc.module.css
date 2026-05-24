@@ -1,0 +1,146 @@
+.page { padding: 2rem 0 4rem; }
+.wrap { display: flex; flex-direction: column; gap: 2rem; }
+
+.hero { text-align: center; padding: 2rem 0 0.5rem; }
+.crumb { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #f1f5f9 40%, var(--accent-glow));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 0.6rem;
+}
+.sub { color: var(--text-secondary); font-size: 1rem; max-width: 480px; margin: 0 auto; }
+
+/* Calculator shell */
+.calcContainer {
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+}
+
+/* Display */
+.displayArea {
+  background: var(--bg-elevated);
+  padding: 1rem 1.25rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.expressionLine {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  min-height: 1.2em;
+  text-align: right;
+  margin-bottom: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mainDisplay {
+  font-family: var(--font-mono);
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-height: 1.2em;
+  line-height: 1.1;
+  margin-bottom: 0.6rem;
+}
+.displayError { color: var(--accent-red); }
+
+.statusRow { display: flex; gap: 0.4rem; }
+.modeBtn {
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  transition: all 0.15s;
+}
+.modeBtn:hover { border-color: var(--accent); color: var(--text-primary); }
+.modeActive { border-color: var(--accent); background: rgba(59,130,246,0.12); color: var(--accent-glow); }
+
+/* History */
+.historyPanel {
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+  max-height: 160px;
+  overflow-y: auto;
+  padding: 0.5rem 1rem;
+}
+.historyEmpty { font-size: 0.78rem; color: var(--text-muted); text-align: center; padding: 0.5rem 0; }
+.historyItem {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  padding: 0.25rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Button rows */
+.sciRows { padding: 0.75rem 0.75rem 0; }
+.mainKeypad { padding: 0 0.75rem 0.75rem; }
+.btnRow { display: flex; gap: 0.4rem; margin-bottom: 0.4rem; }
+
+.btn {
+  flex: 1;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.1s;
+  font-family: var(--font-mono);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+.btn:active { transform: scale(0.95); }
+
+.btnDigit { background: var(--bg-elevated); color: var(--text-primary); border-color: var(--border); }
+.btnDigit:hover { background: rgba(255,255,255,0.08); }
+
+.btnOp { background: rgba(59,130,246,0.12); color: var(--accent-glow); border-color: rgba(59,130,246,0.3); font-size: 1.1rem; }
+.btnOp:hover { background: rgba(59,130,246,0.2); }
+
+.btnEquals { background: var(--accent); color: #fff; border-color: var(--accent); font-size: 1.1rem; flex: 1; }
+.btnEquals:hover { background: #2563eb; }
+
+.btnClear { background: rgba(239,68,68,0.12); color: var(--accent-red); border-color: rgba(239,68,68,0.25); }
+.btnClear:hover { background: rgba(239,68,68,0.2); }
+
+.btnBack { background: rgba(245,158,11,0.12); color: var(--accent-amber); border-color: rgba(245,158,11,0.25); }
+.btnBack:hover { background: rgba(245,158,11,0.2); }
+
+.btnSci { background: var(--bg-surface); color: var(--text-secondary); font-size: 0.78rem; height: 40px; }
+.btnSci:hover { background: var(--bg-elevated); color: var(--text-primary); }
+
+.btnSpecial { background: var(--bg-surface); color: var(--text-secondary); }
+.btnSpecial:hover { background: var(--bg-elevated); color: var(--text-primary); }
+
+.btnZero { flex: 2; }
+
+.memActive { color: var(--accent-green) !important; border-color: rgba(16,185,129,0.3) !important; }
+
+.article { max-width: 600px; margin: 0 auto; color: var(--text-secondary); line-height: 1.8; }
+.article h2 { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin: 2rem 0 0.6rem; }
+.article p { font-size: 0.9rem; margin-bottom: 0.75rem; }
+.article strong { color: var(--text-primary); }
+
+@media (max-width: 540px) {
+  .calcContainer { border-radius: 0; border-left: none; border-right: none; }
+  .btn { height: 44px; font-size: 0.82rem; }
+  .btnSci { height: 38px; font-size: 0.72rem; }
+}
